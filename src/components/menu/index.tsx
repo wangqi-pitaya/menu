@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import menuData from './constants/index.json';
+import './index.css';
 
 function eventFn(e: any, color: string) {
   const nodeName = e.target.childNodes[0].nodeName.toLowerCase();
@@ -51,7 +52,7 @@ export default function Menu() {
       <div
         ref={el => { wrapRef.current = el }}
         key={data.id}
-        style={{fontSize: '24px'}}
+        className='wrap'
         onClick={click}
       >
         <div>
@@ -68,7 +69,7 @@ export default function Menu() {
 
     return childrenList.map((item: any) => (
       <div key={item.id}>
-        <div style={{paddingLeft: '30px'}}>
+        <div className='children'>
           {renderId(item.id)}
           <div>{renderChildren(item.children)}</div>
         </div>
@@ -76,7 +77,7 @@ export default function Menu() {
     ))
   }
 
-  const renderId = (id: string) => <span style={{cursor: 'pointer'}}>{id}</span>
+  const renderId = (id: string) => <span className='id'>{id}</span>
 
   return (
     <div className='wrap'>{getMenuTree(menuData)}</div>

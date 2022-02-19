@@ -1,0 +1,12 @@
+.wrap {
+  font-size: 20px;
+}
+
+.children {
+  padding-left: 30px;
+}
+
+.id {
+  cursor: pointer;
+  user-select: none;
+}
